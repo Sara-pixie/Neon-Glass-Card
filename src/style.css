@@ -92,7 +92,16 @@ p {
   width: 50px;
   height: 50px;
   backdrop-filter: blur(10px);
-  border-radius: 8px;
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
   background: rgba(255, 255, 255, 0.1);
   position: absolute;
   top: 0;
@@ -101,6 +110,7 @@ p {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   opacity: 0;
   transition: 0.5s;
+  animation: sway 3s ease-in-out infinite;
 }
 .glassDown {
   position: absolute;
@@ -108,13 +118,23 @@ p {
   right: 0;
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   transition: 0.5s;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   opacity: 0;
   z-index: 5;
+  animation: sway 3s ease-in-out 1s infinite;
 }
 .card:hover .glassUp {
   top: -70px;
@@ -129,4 +149,16 @@ p {
   width: 100px;
   height: 100px;
   opacity: 1;
+}
+
+/*Animation*/
+@keyframes sway {
+  0%,
+  100% {
+    transform: translate(10px, 10px);
+  }
+
+  50% {
+    transform: translate(-10px, -5px);
+  }
 }
