@@ -151,6 +151,40 @@ p {
   opacity: 1;
 }
 
+/*Changing the neon colours*/
+.colorPicker {
+  display: flex;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  justify-content: space-around;
+  opacity: 0;
+  transition: 0.5s;
+}
+.colorChoice {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+#color_1 {
+  background: linear-gradient(315deg, #4dff03, #00d0ff);
+}
+#color_2 {
+  background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+#color_3 {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+.card:hover .colorPicker {
+  opacity: 1;
+}
+.colorChoice:hover {
+  border: 1px solid rgb(32, 32, 32);
+  cursor: pointer;
+}
 /*Animation*/
 @keyframes sway {
   0%,
